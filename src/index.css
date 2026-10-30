@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .bg-glass {
+    background: rgba(16, 42, 67, 0.65);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(0, 212, 255, 0.15);
+  }
+  
+  .bg-glass-card {
+    background: linear-gradient(135deg, rgba(16, 42, 67, 0.75) 0%, rgba(7, 20, 38, 0.85) 100%);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .glow-cyan {
+    box-shadow: 0 0 20px -3px rgba(0, 212, 255, 0.35);
+  }
+
+  .glow-red {
+    box-shadow: 0 0 25px 2px rgba(255, 69, 69, 0.45);
+  }
+
+  .glow-orange {
+    box-shadow: 0 0 20px 0 rgba(255, 159, 67, 0.4);
+  }
+
+  .glow-green {
+    box-shadow: 0 0 20px 0 rgba(46, 204, 113, 0.4);
+  }
+}
+
+/* Custom Scrollbar for Command Center */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #071426;
+}
+::-webkit-scrollbar-thumb {
+  background: #102a43;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00d4ff;
+}
+
+/* Leaflet dark theme adjustments */
+.leaflet-container {
+  background-color: #071426 !important;
+  font-family: 'Outfit', sans-serif !important;
+}
+
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+  background: #0d2137 !important;
+  color: #f1f5f9 !important;
+  border: 1px solid rgba(0, 212, 255, 0.3) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6) !important;
+}
+
+.leaflet-popup-content {
+  margin: 12px 14px !important;
+  line-height: 1.4 !important;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.65;
+    transform: scale(1.08);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes radarSweep {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-radar {
+  animation: radarSweep 6s linear infinite;
+}
